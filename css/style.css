@@ -1,21 +1,325 @@
 @charset "utf-8";
 *{margin:0;
-  padding:0;}
+	padding:0;}
+	body{
+		background-color: ;
+		webkit-font-smoothing:antialiased;
+/*		background-image: url(../image/back2.jpg);*/
+
+ /*	font-variant: "Avenir Next";
+ 	-ms-font-smoothing:antialiased;
+ 	-moz-font-smoothing:antialiased;
+ 	-*/
+ }
+/*幻灯片*/
+ .slider .ppt .ppt-a,
+ .slider .ppt,
+ .slider{
+ 	width: 100%;
+ 	height: 400px;
+ 	position: relative;
+
+ }
+.slider{
+	background-color:#99BBFF;
+	background-image: url(../image/back2.jpg);
+}
+ .slider .ppt{
+ 	overflow: hidden;
+ 	width: 1100px;
+ 	margin: 0 auto;
+ }
+
+ .slider .ppt .ppt-a{}
+ .slider .ppt .ppt-a img{
+ 	position: absolute;
+ 	width: 100%;
+ 	z-index: 1;
+ }
+ .slider .ppt .ppt-a .text{
+ 	position: absolute;
+ 	right: 53%;
+ 	top: 20%;
+ 	z-index: 9;
+
+ }
+ .slider .ppt .ppt-a .text h2{
+ 	font-size: 37px;
+ 	font-weight: bold;
+ 	line-height: 37px;
+ 	color: #FFFFFF ;
+ 	text-align: right;
+ 	font-family: "KaiTi_GB2312";
+ 	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 
+ 	0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 
+ 	0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+ }
+ .slider .ppt .ppt-a .text h3{
+ 	font-size: 45px;
+ 	line-height: 45px;
+ 	color: #FFFFFF ;
+ 	margin-top: 10px;
+ 	text-align: right;
+ 	font-family: "KaiTi";
+ 	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 
+ 	0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 
+ 	0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+ }
+
+ .slider .ctrl{
+ 	width: 100%;
+ 	height: 36px;
+ 	background-color: #5599FF;
+ 	background-image: url(../image/back2.jpg);
+ 	line-height:36px;
+ 	text-align: center; 
+ 	bottom: -30px;
+ 	-webkit-transition:all .5s;
+ 	-moz-transition:all .5s;
+ }
+
+ .slider .ctrl .ctrl-a{
+ 	display: inline-block;
+ 	width: 151px;
+ 	height: 30px;
+ 	background-color: #009FCC ;
+ 	border:3px solid #fff;
+ 	background-image: url(../image/ctrl2.jpg);
+ 	box-shadow: 0 1px 1px rgba(0,0,0,.3);
+ 	position: relative;
+ 	margin-right: 1px;
+ }
+ .slider .ctrl .ctrl-a img{
+ 	width: 100%;
+ 	position: absolute;
+ 	left: 0;
+ 	bottom: 50px;
+ 	z-index: 1;
+ 	opacity: 0;
+ 	-webkit-transition:all .2s;
+ 	-moz-transition:all .2s;
+ };
+}
+
+.slider .ctrl .ctrl-a:hover{
+	background-color: #33CCFF;
+}
+.slider .ctrl .ctrl-a:hover img{
+	bottom: 33px;
+	opacity: 1;
+
+/*	-webkit-box-reflect:below 0px -webkit-gradient{
+		linear,
+		left top,
+		left bottom,
+		from(transparent),
+		color-stop(50%,transparent),
+		to(rgba(255,255,255,.3))*/
+	}
 
 
-#main{position:relative;}
+	.slider .ctrl .ctrl-a_active:hover,
+	.slider .ctrl .ctrl-a_active{
+		background-image: url(../image/ctrl3.jpg);
+	}
+	.slider .ctrl .ctrl-a_active:hover img{
+		opacity: 0; 
+	}
 
-.box{padding:15px 0 0 15px;
-     float:left;}
+	.slider .ppt .ppt-a{
+		opacity: 0;
+		position: absolute;
+		right: 50%;
+		top: 0;
+		-webkit-transition:all .5s;
+		-moz-transition:all .5s;
+	}
+	.slider .ppt .ppt-a h2{
+		opacity: 0;
+		-webkit-transition:all 3s .9s;
+		-moz-transition:all 3s .9s;
+	}
+	.slider .ppt .ppt-a h3{
+		opacity: 0;
+		-webkit-transition:all 1s .8s;
+		-moz-transition:all 1s .8s;
+	}
 
-.pic{padding:10px;
-     border:1px solid #ccc;
-     border-radius:5px;
-     box-shadow:0 0 5px #ccc;}
-	 
-.pic img{width:221px;
-         height:auto;}
+	.slider .ppt .ppt-a_active{
+		opacity: 1;
+		right: 0; 
+	}
+
+	.slider .ppt .ppt-a_active h2,
+	.slider .ppt .ppt-a_active h3{
+		margin-right: 0px;
+		opacity: 1;
+	}
+
+	.slider .ppt .ppt-a h2{
+		margin-right: 55px;
+	}
+	.slider .ppt .ppt-a h3{
+		margin-right: -25px;
+	}
+/*海报区域*/
+.board{
+	width: 100%;
+	height: 600px;
+	position: absolute;
+	margin-top: 36px;
+	background-color: #5599FF;
+	overflow: hidden;
+
+	-webkit-perspective:800px;
+	-moz-perspective:800px;
+}
+
+.poster{
+	width: 360px;
+	height: 260px;
+	position: absolute;
+	z-index: 1;
+	box-shadow: 0 0 1px rgba(0,0,0,.01);
+	-webkit-transition:all .9s;
+	-moz-transition:all .9s;
+}
+
+.poster .side{
+	width: 100%;
+	height: 100%;
+	background-color: #eee;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 20px;
+
+	box-sizing:border-box;
+}
+
+.poster .side-front{}
+.poster .side-front .image{
+	width: 100%;
+	height: 186px;
+	line-height: 186px;
+	overflow: hidden;
+}
+.poster .side-front .image img{
+	width: 100%;
+}
+.poster .side-front .caption{
+	text-align: center;
+	font-size: 16px;
+	font-family: "Microsoft YaHei";
+	line-height: 50px;
+}
+.poster .side-back{}
+.poster .side-back .desc{
+	color:#666;
+	font-size: 14px;
+	line-height: 1.5em;
+}
+
+.poster_center{
+	left: 50%;
+	top: 50%;
+	margin:-130px 0 0 -180px;
+	z-index: 9;
+}
+
+.poster-rota{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	-webkit-transform-style:preserve-3d;
+	-webkit-transition:all 0.7s;
+	-moz-transform-style:preserve-3d;
+	-moz-transition:all 0.7s;
+}
+.poster-rota .side-front{
+	-webkit-transform:rotateY(0deg);
+	-moz-transform:rotateY(0deg);
+}
+.poster-rota .side-back{
+	-webkit-transform:rotateY(180deg);
+	-moz-transform:rotateY(180deg);
+}
+.poster-rota .side{
+	-webkit-backface-visibility:hidden;
+	-moz-backface-visibility:hidden;
+}
+/*海报控制按钮*/
+.nav{
+	width: 44%;
+	height: 30px;
+	line-height: 30px;
+	position: absolute;
+	left: 28%;
+	bottom:20px;
+	z-index: 9;
+	background-color: #fff;
+	text-align: center;
+	border-radius: 5px;
+}
+.nav .i{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	cursor: pointer;
+	background-color: #5599FF;
+	text-align: center;
+	border-radius: 50%;
+	-webkit-transform:scale(.48);
+	-webkit-transition:all .5s;
+	-moz-transform:scale(.48);
+	-moz-transition:all .5s;
+}
+.nav .i_current{
+	-webkit-transform:scale(1);
+	-moz-transform:scale(1);
+
+	background-image: url(../image/nav.png);
+}
+.nav .i_back{
+/*	-webkit-tramsform:rotateY(-180deg);
+	-moz-tramsform:rotateY(-180deg);*/
+	background-image: url(../image/nav1.png);
+/*	background-color: #0066FF;*/
+}
+.poster{
+	left: 50%;
+	top: 50%;
+	margin:-130px 0 0 -180px;
+}
+.poster-rota{
+	-webkit-transform-origin:0% 50%;
+	-moz-transform-origin:0% 50%;
+}
+.poster_front .poster-rota{
+	-webkit-transform:translate(0px,0px) rotateY(0deg);
+	-moz-transform:translate(0px,0px) rotateY(0deg);
+}
+.poster_back .poster-rota{
+	-webkit-transform:translate(360px,0px)rotateY(180deg);
+	-moz-transform:translate(360px,0px)rotateY(180deg);
+}
+/*瀑布流图片*/
+	#main{position:relative;
+
+	} 
+
+	.box{padding:15px 0 0 15px;
+		float:left;}
+
+		.pic{padding:10px;
+			border:1px solid #CCC;
+			border-radius:5px;
+			box-shadow:0 0 5px #CCC;}
+
+			.pic img{width:221px;
+				height:auto;}
 
 
-/* CSS Document */
+				/* CSS Document */
 
